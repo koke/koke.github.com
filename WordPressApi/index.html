@@ -92,14 +92,14 @@ UIImage *image = ... // The image to upload
 
 WordPressAPI *wp = [[WordPressAPI alloc] initWithXMLRPCEndpoint:xmlrpcURL username:username password:password];
 [wp publishPostWithImage:(UIImage *)image
-                 description:(NSString *)content
-                       title:(NSString *)title
-                     success:^(NSUInteger postId, NSURL *permalink) {
-                         NSLog(@"Image post successful with ID %d at %@", postId, permalink);
-                     }
-                     failure:^(NSError *error) {
-                         NSLog(@"Post upload failed: %@", [error localizedDescription])
-                     }];
+             description:(NSString *)content
+                   title:(NSString *)title
+                 success:^(NSUInteger postId, NSURL *permalink) {
+                     NSLog(@"Image post successful with ID %d at %@", postId, permalink);
+                 }
+                 failure:^(NSError *error) {
+                     NSLog(@"Post upload failed: %@", [error localizedDescription])
+                 }];
 </code></pre>
 						
 						
