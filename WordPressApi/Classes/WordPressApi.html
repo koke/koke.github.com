@@ -268,6 +268,17 @@
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Given a site URL, tries to guess the URL for the XML-RPC endpoint</p>
+
+<p>When asked for a site URL, sometimes users type the XML-RPC url, or the xmlrpc.php has been moved/renamed. This method would try a few methods to find the proper XML-RPC endpoint:</p>
+
+<ul>
+<li>Try to load the given URL adding <code>/xmlrpc.php</code> at the end. This is the most common use case for proper site URLs</li>
+<li>If that fails, try a test XML-RPC request given URL, maybe it was the XML-RPC URL already</li>
+<li>If that fails, fetch the given URL and search for an <code>EditURI</code> link pointing to the XML-RPC endpoint</li>
+</ul>
+
+
+<p>For additional URL typo fixing, see <a href="https://github.com/koke/NSURL-Guess">NSURL-Guess</a></p>
 	</div>
 	
 	
