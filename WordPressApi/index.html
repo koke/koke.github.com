@@ -40,9 +40,38 @@
 
 <p>It&rsquo;s not meant to provide access to the full feature set of the WordPress XML-RPC API.</p>
 
-<h2>Documentation</h2>
+<h2>Installation</h2>
 
-<p>A reference of the available methods is available at <a href="http://koke.github.com/WordPressApi">http://koke.github.com/WordPressApi</a></p>
+<p>You can download the project from FIXME</p>
+
+<h3>The quick way</h3>
+
+<ul>
+<li>Drag <code>libWordPressApi.a</code> and <code>WordPressApi.h</code> to your Xcode project. Make sure to check &ldquo;Copy items into destination group&rsquo;s folder&rdquo;</li>
+<li>Add <code>#import "</code>WordPressApi<code>.h"</code> to your source file where you plan to use the API</li>
+<li>You&rsquo;re ready to go</li>
+</ul>
+
+
+<h3>The long way</h3>
+
+<p>There can be a few reasons why you wouldn&rsquo;t want to just link the library and import the source instead, some of them:</p>
+
+<ul>
+<li>You want to modify the code</li>
+<li>You are already using <code>AFNetworking</code> or the <code>XMLRPC</code> library. In this case, adding the static library would throw &ldquo;duplicate symbols&rdquo; errors on compile</li>
+</ul>
+
+
+<p>If that&rsquo;s the case, or you just like to have the source available in your project:</p>
+
+<ul>
+<li>Download <a href="https://github.com/AFNetworking/AFNetworking">AFNetworking</a> and add the <code>AFNetworking</code> folder to your project</li>
+<li>Download <a href="https://github.com/eczarny/xmlrpc">XMLRPC</a> and add it to your project. A way to do that is to create a <code>XMLRPC</code> group in your project and add all the .h/.m files in there</li>
+<li>Add the <a href="Classes/WordPressApi.html"><code>WordPressApi</code></a> folder to your project (the one that has <code></code>WordPressApi<code>.h</code>)</li>
+<li>Add <code>#import "WordPressApi.h"</code> to your source file where you plan to use the API</li>
+</ul>
+
 
 <h2>Example project</h2>
 

@@ -27,6 +27,8 @@
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 	
 	
 	
@@ -47,8 +49,6 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/init">&nbsp;&nbsp;&nbsp;&nbsp;- init</option>
-	
 	<option value="//api/name/initWithXMLRPCEndpoint:username:password:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithXMLRPCEndpoint:username:password:</option>
 	
 	<option value="//api/name/publishPostWithGallery:description:title:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- publishPostWithGallery:description:title:success:failure:</option>
@@ -68,6 +68,8 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
 
 
 
@@ -94,8 +96,6 @@
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/init">init</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithXMLRPCEndpoint:username:password:">initWithXMLRPCEndpoint:username:password:</a></span></li>
 	
@@ -141,6 +141,14 @@
 					
 					
 					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>WordPress API for iOS</p>
+					</div>
+					
+					
+					
 					
 					
 					<div class="section section-tasks">
@@ -162,28 +170,28 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/publishPostWithText:title:success:failure:">&ndash;&nbsp;publishPostWithText:title:success:failure:</a></code>
-		
+		<span class="tooltip"><p>Publishes a post asynchronously with text/HTML only</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/publishPostWithImage:description:title:success:failure:">&ndash;&nbsp;publishPostWithImage:description:title:success:failure:</a></code>
-		
+		<span class="tooltip"><p>Publishes a post asynchronously with an image</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/publishPostWithGallery:description:title:success:failure:">&ndash;&nbsp;publishPostWithGallery:description:title:success:failure:</a></code>
-		
+		<span class="tooltip"><p>Publishes a post asynchronously with an image gallery</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/publishPostWithVideo:description:title:success:failure:">&ndash;&nbsp;publishPostWithVideo:description:title:success:failure:</a></code>
-		
+		<span class="tooltip"><p>Publishes a post asynchronously with a video</p></span>
 	</span>
 	
 	
@@ -199,21 +207,6 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/guessXMLRPCURLForSite:success:failure:">+&nbsp;guessXMLRPCURLForSite:success:failure:</a></code>
 		<span class="tooltip"><p>Given a site URL, tries to guess the URL for the XML-RPC endpoint</p></span>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						
-						<h3 class="subsubtitle task-title">Other Methods</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
-		
 	</span>
 	
 	
@@ -300,13 +293,6 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/init" title="init"></a>
-	<h3 class="subsubtitle method-title">init</h3>
-	
-	
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/initWithXMLRPCEndpoint:username:password:" title="initWithXMLRPCEndpoint:username:password:"></a>
 	<h3 class="subsubtitle method-title">initWithXMLRPCEndpoint:username:password:</h3>
 	
@@ -370,11 +356,139 @@
 	<h3 class="subsubtitle method-title">publishPostWithGallery:description:title:success:failure:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Publishes a post asynchronously with an image gallery</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)publishPostWithGallery:(NSArray *)<em>images</em> description:(NSString *)<em>content</em> title:(NSString *)<em>title</em> success:(void ( ^ ) ( NSUInteger postId , NSURL *permalink ))<em>success</em> failure:(void ( ^ ) ( NSError *error ))<em>failure</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>images</em></dt>
+			<dd><p>An array containing images (as UIImage) to add to the post. The gallery will be embedded <strong>before</strong> the content using the <a href="http://en.support.wordpress.com/images/gallery/">[gallery]</a> shortcode.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>content</em></dt>
+			<dd><p>The post content/body. It can be text only or HTML, but be aware that some HTML might be stripped in WordPress. <a href="http://en.support.wordpress.com/code/">What&rsquo;s allowed in WordPress.com?</a></p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>title</em></dt>
+			<dd><p>The post title.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>A block object to execute when the method successfully publishes the post. This block has no return value and takes two arguments: the resulting post ID, and the permalink (or <a href="http://en.support.wordpress.com/shortlinks/">shortlink</a> if available).</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>A block object to execute when the method can&rsquo;t publish the post. This block has no return value and takes one argument: a NSError object with details on the error.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Publishes a post asynchronously with an image gallery</p>
+
+<p>All the parameters are optional, and can be set to <code>nil</code></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WordPressApi.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
 	<a name="//api/name/publishPostWithImage:description:title:success:failure:" title="publishPostWithImage:description:title:success:failure:"></a>
 	<h3 class="subsubtitle method-title">publishPostWithImage:description:title:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Publishes a post asynchronously with an image</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)publishPostWithImage:(UIImage *)<em>image</em> description:(NSString *)<em>content</em> title:(NSString *)<em>title</em> success:(void ( ^ ) ( NSUInteger postId , NSURL *permalink ))<em>success</em> failure:(void ( ^ ) ( NSError *error ))<em>failure</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>image</em></dt>
+			<dd><p>An image to add to the post. The image will be embedded <strong>before</strong> the content.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>content</em></dt>
+			<dd><p>The post content/body. It can be text only or HTML, but be aware that some HTML might be stripped in WordPress. <a href="http://en.support.wordpress.com/code/">What&rsquo;s allowed in WordPress.com?</a></p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>title</em></dt>
+			<dd><p>The post title.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>A block object to execute when the method successfully publishes the post. This block has no return value and takes two arguments: the resulting post ID, and the permalink (or <a href="http://en.support.wordpress.com/shortlinks/">shortlink</a> if available).</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>A block object to execute when the method can&rsquo;t publish the post. This block has no return value and takes one argument: a NSError object with details on the error.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Publishes a post asynchronously with an image</p>
+
+<p>All the parameters are optional, and can be set to <code>nil</code></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WordPressApi.h</code><br />
+	</div>				
 	
 	
 </div>
@@ -384,11 +498,138 @@
 	<h3 class="subsubtitle method-title">publishPostWithText:title:success:failure:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Publishes a post asynchronously with text/HTML only</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)publishPostWithText:(NSString *)<em>content</em> title:(NSString *)<em>title</em> success:(void ( ^ ) ( NSUInteger postId , NSURL *permalink ))<em>success</em> failure:(void ( ^ ) ( NSError *error ))<em>failure</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>content</em></dt>
+			<dd><p>The post content/body. It can be text only or HTML, but be aware that some HTML might be stripped in WordPress. <a href="http://en.support.wordpress.com/code/">What&rsquo;s allowed in WordPress.com?</a></p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>title</em></dt>
+			<dd><p>The post title.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>A block object to execute when the method successfully publishes the post. This block has no return value and takes two arguments: the resulting post ID, and the permalink (or <a href="http://en.support.wordpress.com/shortlinks/">shortlink</a> if available).</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>A block object to execute when the method can&rsquo;t publish the post. This block has no return value and takes one argument: a NSError object with details on the error.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Publishes a post asynchronously with text/HTML only</p>
+
+<p>All the parameters are optional, and can be set to <code>nil</code></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WordPressApi.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
 	<a name="//api/name/publishPostWithVideo:description:title:success:failure:" title="publishPostWithVideo:description:title:success:failure:"></a>
 	<h3 class="subsubtitle method-title">publishPostWithVideo:description:title:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Publishes a post asynchronously with a video</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)publishPostWithVideo:(NSString *)<em>videoPath</em> description:(NSString *)<em>content</em> title:(NSString *)<em>title</em> success:(void ( ^ ) ( NSUInteger postId , NSURL *permalink ))<em>success</em> failure:(void ( ^ ) ( NSError *error ))<em>failure</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>videoPath</em></dt>
+			<dd><p>A string containing the path to the video file to add to the post. The video will be embedded <strong>before</strong> the content.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>content</em></dt>
+			<dd><p>The post content/body. It can be text only or HTML, but be aware that some HTML might be stripped in WordPress. <a href="http://en.support.wordpress.com/code/">What&rsquo;s allowed in WordPress.com?</a></p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>title</em></dt>
+			<dd><p>The post title.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>A block object to execute when the method successfully publishes the post. This block has no return value and takes two arguments: the resulting post ID, and the permalink (or <a href="http://en.support.wordpress.com/shortlinks/">shortlink</a> if available).</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>A block object to execute when the method can&rsquo;t publish the post. This block has no return value and takes one argument: a NSError object with details on the error.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Publishes a post asynchronously with a video</p>
+
+<p>All the parameters are optional, and can be set to <code>nil</code></p>
+
+<p>For WordPress.com, if VideoPress is not available for the blog, there will be an error.</p>
+
+<p>For self hosted blogs, if VideoPress is available it will be used, otherwise the video will be embedded using the HTML5 <code>&lt;video&gt;</code> tag.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WordPressApi.h</code><br />
+	</div>				
 	
 	
 </div>
