@@ -52,11 +52,9 @@
 
 <h3>Posting a picture</h3>
 
-<p>An hypothetical camera app called Cameramattic wants to add an option to share its pictures on WordPress</p>
+<p>A hypothetical camera app called Cameramattic wants to add an option to share its pictures on WordPress</p>
 
-<p>````objc</p>
-
-<pre><code>NSURL *xmlrpcURL = [NSURL URLWithString:@"https://aphotoblog.wordpress.com"]`https://aphotoblog.wordpress.com`"];
+<pre><code>NSURL *xmlrpcURL = [NSURL URLWithString:@"https://aphotoblog.wordpress.com"]https://aphotoblog.wordpress.com"];
 NSString *username = "aUsername";
 NSString *password = "thePassword";
 NSString *title = "My cat";
@@ -74,8 +72,6 @@ WordPressAPI *wp = [[WordPressAPI alloc] initWithXMLRPCEndpoint:xmlrpcURL userna
                          NSLog(@"Post upload failed: %@", [error localizedDescription])
                      }];
 </code></pre>
-
-<p>````</p>
 						
 						
 					</div>
