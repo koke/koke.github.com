@@ -1,0 +1,1198 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>AFXMLRPCClient Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 743)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">WordPress API for iOS </a></h1>
+				<a id="developerHome" href="../index.html">Automattic</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">AFXMLRPCClient Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/operationQueue">&nbsp;&nbsp;&nbsp;&nbsp;operationQueue</option>
+	
+	<option value="//api/name/xmlrpcEndpoint">&nbsp;&nbsp;&nbsp;&nbsp;xmlrpcEndpoint</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/clientWithXMLRPCEndpoint:">&nbsp;&nbsp;&nbsp;&nbsp;+ clientWithXMLRPCEndpoint:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/HTTPRequestOperationWithRequest:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- HTTPRequestOperationWithRequest:success:failure:</option>
+	
+	<option value="//api/name/callMethod:parameters:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- callMethod:parameters:success:failure:</option>
+	
+	<option value="//api/name/cancelAllHTTPOperations">&nbsp;&nbsp;&nbsp;&nbsp;- cancelAllHTTPOperations</option>
+	
+	<option value="//api/name/clearAuthorizationHeader">&nbsp;&nbsp;&nbsp;&nbsp;- clearAuthorizationHeader</option>
+	
+	<option value="//api/name/defaultValueForHeader:">&nbsp;&nbsp;&nbsp;&nbsp;- defaultValueForHeader:</option>
+	
+	<option value="//api/name/enqueueHTTPRequestOperation:">&nbsp;&nbsp;&nbsp;&nbsp;- enqueueHTTPRequestOperation:</option>
+	
+	<option value="//api/name/initWithXMLRPCEndpoint:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithXMLRPCEndpoint:</option>
+	
+	<option value="//api/name/requestWithMethod:parameters:">&nbsp;&nbsp;&nbsp;&nbsp;- requestWithMethod:parameters:</option>
+	
+	<option value="//api/name/setAuthorizationHeaderWithToken:">&nbsp;&nbsp;&nbsp;&nbsp;- setAuthorizationHeaderWithToken:</option>
+	
+	<option value="//api/name/setAuthorizationHeaderWithUsername:password:">&nbsp;&nbsp;&nbsp;&nbsp;- setAuthorizationHeaderWithUsername:password:</option>
+	
+	<option value="//api/name/setDefaultHeader:value:">&nbsp;&nbsp;&nbsp;&nbsp;- setDefaultHeader:value:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Accessing HTTP Client Properties">Accessing HTTP Client Properties</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating and Initializing XML-RPC Clients">Creating and Initializing XML-RPC Clients</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Managing HTTP Header Values">Managing HTTP Header Values</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating Request Objects">Creating Request Objects</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating HTTP Operations">Creating HTTP Operations</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Managing Enqueued HTTP Operations">Managing Enqueued HTTP Operations</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Making XML-RPC requests">Making XML-RPC requests</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/operationQueue">operationQueue</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/xmlrpcEndpoint">xmlrpcEndpoint</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/clientWithXMLRPCEndpoint:">clientWithXMLRPCEndpoint:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/HTTPRequestOperationWithRequest:success:failure:">HTTPRequestOperationWithRequest:success:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/callMethod:parameters:success:failure:">callMethod:parameters:success:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cancelAllHTTPOperations">cancelAllHTTPOperations</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/clearAuthorizationHeader">clearAuthorizationHeader</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/defaultValueForHeader:">defaultValueForHeader:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enqueueHTTPRequestOperation:">enqueueHTTPRequestOperation:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithXMLRPCEndpoint:">initWithXMLRPCEndpoint:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestWithMethod:parameters:">requestWithMethod:parameters:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setAuthorizationHeaderWithToken:">setAuthorizationHeaderWithToken:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setAuthorizationHeaderWithUsername:password:">setAuthorizationHeaderWithUsername:password:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setDefaultHeader:value:">setDefaultHeader:value:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="AFXMLRPCClient Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">AFXMLRPCClient Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">AFXMLRPCClient.h<br />AFXMLRPCClient.m</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p><a href="AFXMLRPCClient.html"><code>AFXMLRPCClient</code></a> binds together AFNetworking and eczarny&rsquo;s XML-RPC library to interact with XML-RPC based APIs</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Accessing HTTP Client Properties" name="task_Accessing HTTP Client Properties"></a>
+						<h3 class="subsubtitle task-title">Accessing HTTP Client Properties</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/xmlrpcEndpoint">&nbsp;&nbsp;xmlrpcEndpoint</a></code>
+		<span class="tooltip"><p>The url used as the XML-RPC endpoint</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/operationQueue">&nbsp;&nbsp;operationQueue</a></code>
+		<span class="tooltip"><p>The operation queue which manages operations enqueued by the HTTP client.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Creating and Initializing XML-RPC Clients" name="task_Creating and Initializing XML-RPC Clients"></a>
+						<h3 class="subsubtitle task-title">Creating and Initializing XML-RPC Clients</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/clientWithXMLRPCEndpoint:">+&nbsp;clientWithXMLRPCEndpoint:</a></code>
+		<span class="tooltip"><p>Creates and initializes an <a href="AFXMLRPCClient.html"><code>AFXMLRPCClient</code></a> object with the specified base URL.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithXMLRPCEndpoint:">&ndash;&nbsp;initWithXMLRPCEndpoint:</a></code>
+		<span class="tooltip"><p>Initializes an <a href="AFXMLRPCClient.html"><code>AFXMLRPCClient</code></a> object with the specified base URL.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Managing HTTP Header Values" name="task_Managing HTTP Header Values"></a>
+						<h3 class="subsubtitle task-title">Managing HTTP Header Values</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/defaultValueForHeader:">&ndash;&nbsp;defaultValueForHeader:</a></code>
+		<span class="tooltip"><p>Returns the value for the HTTP headers set in request objects created by the HTTP client.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setDefaultHeader:value:">&ndash;&nbsp;setDefaultHeader:value:</a></code>
+		<span class="tooltip"><p>Sets the value for the HTTP headers set in request objects made by the HTTP client. If <code>nil</code>, removes the existing value for that header.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setAuthorizationHeaderWithUsername:password:">&ndash;&nbsp;setAuthorizationHeaderWithUsername:password:</a></code>
+		<span class="tooltip"><p>Sets the &ldquo;Authorization&rdquo; HTTP header set in request objects made by the HTTP client to a basic authentication value with Base64-encoded username and password. This overwrites any existing value for this header.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setAuthorizationHeaderWithToken:">&ndash;&nbsp;setAuthorizationHeaderWithToken:</a></code>
+		<span class="tooltip"><p>Sets the &ldquo;Authorization&rdquo; HTTP header set in request objects made by the HTTP client to a token-based authentication value, such as an OAuth access token. This overwrites any existing value for this header.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/clearAuthorizationHeader">&ndash;&nbsp;clearAuthorizationHeader</a></code>
+		<span class="tooltip"><p>Clears any existing value for the &ldquo;Authorization&rdquo; HTTP header.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Creating Request Objects" name="task_Creating Request Objects"></a>
+						<h3 class="subsubtitle task-title">Creating Request Objects</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/requestWithMethod:parameters:">&ndash;&nbsp;requestWithMethod:parameters:</a></code>
+		<span class="tooltip"><p>Creates an <code>NSMutableURLRequest</code> object with the specified XML-RPC method and parameters.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Creating HTTP Operations" name="task_Creating HTTP Operations"></a>
+						<h3 class="subsubtitle task-title">Creating HTTP Operations</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/HTTPRequestOperationWithRequest:success:failure:">&ndash;&nbsp;HTTPRequestOperationWithRequest:success:failure:</a></code>
+		<span class="tooltip"><p>Creates an <code>AFHTTPRequestOperation</code></p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Managing Enqueued HTTP Operations" name="task_Managing Enqueued HTTP Operations"></a>
+						<h3 class="subsubtitle task-title">Managing Enqueued HTTP Operations</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/enqueueHTTPRequestOperation:">&ndash;&nbsp;enqueueHTTPRequestOperation:</a></code>
+		<span class="tooltip"><p>Enqueues an <code>AFHTTPRequestOperation</code> to the XML-RPC client&rsquo;s operation queue.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cancelAllHTTPOperations">&ndash;&nbsp;cancelAllHTTPOperations</a></code>
+		<span class="tooltip"><p>Cancels all operations in the HTTP client&rsquo;s operation queue.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Making XML-RPC requests" name="task_Making XML-RPC requests"></a>
+						<h3 class="subsubtitle task-title">Making XML-RPC requests</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/callMethod:parameters:success:failure:">&ndash;&nbsp;callMethod:parameters:success:failure:</a></code>
+		<span class="tooltip"><p>Creates an <code>AFHTTPRequestOperation</code> with a <code>XML-RPC</code> request, and enqueues it to the HTTP client&rsquo;s operation queue.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/operationQueue" title="operationQueue"></a>
+	<h3 class="subsubtitle method-title">operationQueue</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The operation queue which manages operations enqueued by the HTTP client.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic, retain) NSOperationQueue *operationQueue</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The operation queue which manages operations enqueued by the HTTP client.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AFXMLRPCClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/xmlrpcEndpoint" title="xmlrpcEndpoint"></a>
+	<h3 class="subsubtitle method-title">xmlrpcEndpoint</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The url used as the XML-RPC endpoint</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic, retain) NSURL *xmlrpcEndpoint</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The url used as the XML-RPC endpoint</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AFXMLRPCClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/clientWithXMLRPCEndpoint:" title="clientWithXMLRPCEndpoint:"></a>
+	<h3 class="subsubtitle method-title">clientWithXMLRPCEndpoint:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and initializes an <a href="AFXMLRPCClient.html"><code>AFXMLRPCClient</code></a> object with the specified base URL.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (AFXMLRPCClient *)clientWithXMLRPCEndpoint:(NSURL *)<em>xmlrpcEndpoint</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>xmlrpcEndpoint</em></dt>
+			<dd><p>The XML-RPC endpoint URL for the XML-RPC client. This argument must not be nil.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The newly-initialized XML-RPC client</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates and initializes an <a href="AFXMLRPCClient.html"><code>AFXMLRPCClient</code></a> object with the specified base URL.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AFXMLRPCClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/HTTPRequestOperationWithRequest:success:failure:" title="HTTPRequestOperationWithRequest:success:failure:"></a>
+	<h3 class="subsubtitle method-title">HTTPRequestOperationWithRequest:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates an <code>AFHTTPRequestOperation</code></p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (AFHTTPRequestOperation *)HTTPRequestOperationWithRequest:(NSURLRequest *)<em>request</em> success:(void ( ^ ) ( AFHTTPRequestOperation *operation , id responseObject ))<em>success</em> failure:(void ( ^ ) ( AFHTTPRequestOperation *operation , NSError *error ))<em>failure</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>request</em></dt>
+			<dd><p>The request object to be loaded asynchronously during execution of the operation.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>A block object to be executed when the request operation finishes successfully. This block has no return value and takes two arguments: the created request operation and the object created from the response data of request.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>A block object to be executed when the request operation finishes unsuccessfully, or that finishes successfully, but encountered an error while parsing the resonse data. This block has no return value and takes two arguments:, the created request operation and the <code>NSError</code> object describing the network or parsing error that occurred.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates an <code>AFHTTPRequestOperation</code></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AFXMLRPCClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/callMethod:parameters:success:failure:" title="callMethod:parameters:success:failure:"></a>
+	<h3 class="subsubtitle method-title">callMethod:parameters:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates an <code>AFHTTPRequestOperation</code> with a <code>XML-RPC</code> request, and enqueues it to the HTTP client&rsquo;s operation queue.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)callMethod:(NSString *)<em>method</em> parameters:(NSArray *)<em>parameters</em> success:(void ( ^ ) ( AFHTTPRequestOperation *operation , id responseObject ))<em>success</em> failure:(void ( ^ ) ( AFHTTPRequestOperation *operation , NSError *error ))<em>failure</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>method</em></dt>
+			<dd><p>The XML-RPC method.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>parameters</em></dt>
+			<dd><p>The XML-RPC parameters to be set as the request body.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>A block object to be executed when the request operation finishes successfully. This block has no return value and takes two arguments: the created request operation and the object created from the response data of request.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>A block object to be executed when the request operation finishes unsuccessfully, or that finishes successfully, but encountered an error while parsing the resonse data. This block has no return value and takes two arguments:, the created request operation and the <code>NSError</code> object describing the network or parsing error that occurred.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates an <code>AFHTTPRequestOperation</code> with a <code>XML-RPC</code> request, and enqueues it to the HTTP client&rsquo;s operation queue.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AFXMLRPCClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/cancelAllHTTPOperations" title="cancelAllHTTPOperations"></a>
+	<h3 class="subsubtitle method-title">cancelAllHTTPOperations</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Cancels all operations in the HTTP client&rsquo;s operation queue.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)cancelAllHTTPOperations</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Cancels all operations in the HTTP client&rsquo;s operation queue.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AFXMLRPCClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/clearAuthorizationHeader" title="clearAuthorizationHeader"></a>
+	<h3 class="subsubtitle method-title">clearAuthorizationHeader</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Clears any existing value for the &ldquo;Authorization&rdquo; HTTP header.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)clearAuthorizationHeader</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Clears any existing value for the &ldquo;Authorization&rdquo; HTTP header.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AFXMLRPCClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/defaultValueForHeader:" title="defaultValueForHeader:"></a>
+	<h3 class="subsubtitle method-title">defaultValueForHeader:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the value for the HTTP headers set in request objects created by the HTTP client.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSString *)defaultValueForHeader:(NSString *)<em>header</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>header</em></dt>
+			<dd><p>The HTTP header to return the default value for</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The default value for the HTTP header, or <code>nil</code> if unspecified</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the value for the HTTP headers set in request objects created by the HTTP client.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AFXMLRPCClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/enqueueHTTPRequestOperation:" title="enqueueHTTPRequestOperation:"></a>
+	<h3 class="subsubtitle method-title">enqueueHTTPRequestOperation:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Enqueues an <code>AFHTTPRequestOperation</code> to the XML-RPC client&rsquo;s operation queue.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)enqueueHTTPRequestOperation:(AFHTTPRequestOperation *)<em>operation</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>operation</em></dt>
+			<dd><p>The XML-RPC request operation to be enqueued.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Enqueues an <code>AFHTTPRequestOperation</code> to the XML-RPC client&rsquo;s operation queue.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AFXMLRPCClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithXMLRPCEndpoint:" title="initWithXMLRPCEndpoint:"></a>
+	<h3 class="subsubtitle method-title">initWithXMLRPCEndpoint:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes an <a href="AFXMLRPCClient.html"><code>AFXMLRPCClient</code></a> object with the specified base URL.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (id)initWithXMLRPCEndpoint:(NSURL *)<em>xmlrpcEndpoint</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>xmlrpcEndpoint</em></dt>
+			<dd><p>The XML-RPC endpoint URL for the XML-RPC client. This argument must not be nil.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The newly-initialized XML-RPC client</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initializes an <a href="AFXMLRPCClient.html"><code>AFXMLRPCClient</code></a> object with the specified base URL.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AFXMLRPCClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/requestWithMethod:parameters:" title="requestWithMethod:parameters:"></a>
+	<h3 class="subsubtitle method-title">requestWithMethod:parameters:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates an <code>NSMutableURLRequest</code> object with the specified XML-RPC method and parameters.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSMutableURLRequest *)requestWithMethod:(NSString *)<em>method</em> parameters:(NSArray *)<em>parameters</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>method</em></dt>
+			<dd><p>The XML-RPC method for the request.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>parameters</em></dt>
+			<dd><p>The XML-RPC parameters to be set as the request body.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSMutableURLRequest</code> object</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates an <code>NSMutableURLRequest</code> object with the specified XML-RPC method and parameters.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AFXMLRPCClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setAuthorizationHeaderWithToken:" title="setAuthorizationHeaderWithToken:"></a>
+	<h3 class="subsubtitle method-title">setAuthorizationHeaderWithToken:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the &ldquo;Authorization&rdquo; HTTP header set in request objects made by the HTTP client to a token-based authentication value, such as an OAuth access token. This overwrites any existing value for this header.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)setAuthorizationHeaderWithToken:(NSString *)<em>token</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>token</em></dt>
+			<dd><p>The authentication token</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sets the &ldquo;Authorization&rdquo; HTTP header set in request objects made by the HTTP client to a token-based authentication value, such as an OAuth access token. This overwrites any existing value for this header.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AFXMLRPCClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setAuthorizationHeaderWithUsername:password:" title="setAuthorizationHeaderWithUsername:password:"></a>
+	<h3 class="subsubtitle method-title">setAuthorizationHeaderWithUsername:password:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the &ldquo;Authorization&rdquo; HTTP header set in request objects made by the HTTP client to a basic authentication value with Base64-encoded username and password. This overwrites any existing value for this header.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)setAuthorizationHeaderWithUsername:(NSString *)<em>username</em> password:(NSString *)<em>password</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>username</em></dt>
+			<dd><p>The HTTP basic auth username</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>password</em></dt>
+			<dd><p>The HTTP basic auth password</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sets the &ldquo;Authorization&rdquo; HTTP header set in request objects made by the HTTP client to a basic authentication value with Base64-encoded username and password. This overwrites any existing value for this header.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AFXMLRPCClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setDefaultHeader:value:" title="setDefaultHeader:value:"></a>
+	<h3 class="subsubtitle method-title">setDefaultHeader:value:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the value for the HTTP headers set in request objects made by the HTTP client. If <code>nil</code>, removes the existing value for that header.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)setDefaultHeader:(NSString *)<em>header</em> value:(NSString *)<em>value</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>header</em></dt>
+			<dd><p>The HTTP header to set a default value for</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>The value set as default for the specified header, or `nil</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sets the value for the HTTP headers set in request objects made by the HTTP client. If <code>nil</code>, removes the existing value for that header.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">AFXMLRPCClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 Automattic. All rights reserved. (Last updated: 2012-01-17)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 743)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+		</script>
+	</body>
+</html>

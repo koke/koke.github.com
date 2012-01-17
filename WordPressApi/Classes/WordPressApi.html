@@ -42,12 +42,28 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
+	<option value="//api/name/apiWithXMLRPCEndpoint:token:">&nbsp;&nbsp;&nbsp;&nbsp;+ apiWithXMLRPCEndpoint:token:</option>
+	
+	<option value="//api/name/apiWithXMLRPCEndpoint:username:password:">&nbsp;&nbsp;&nbsp;&nbsp;+ apiWithXMLRPCEndpoint:username:password:</option>
+	
+	<option value="//api/name/authenticateWithClientId:redirectUri:secret:callback:">&nbsp;&nbsp;&nbsp;&nbsp;+ authenticateWithClientId:redirectUri:secret:callback:</option>
+	
 	<option value="//api/name/guessXMLRPCURLForSite:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ guessXMLRPCURLForSite:success:failure:</option>
+	
+	<option value="//api/name/handleOpenURL:success:">&nbsp;&nbsp;&nbsp;&nbsp;+ handleOpenURL:success:</option>
+	
+	<option value="//api/name/ssoAvailable">&nbsp;&nbsp;&nbsp;&nbsp;+ ssoAvailable</option>
 	
 	
 	
 	
 	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/authenticateWithSuccess:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- authenticateWithSuccess:failure:</option>
+	
+	<option value="//api/name/getPosts:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- getPosts:success:failure:</option>
+	
+	<option value="//api/name/initWithXMLRPCEndpoint:token:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithXMLRPCEndpoint:token:</option>
 	
 	<option value="//api/name/initWithXMLRPCEndpoint:username:password:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithXMLRPCEndpoint:username:password:</option>
 	
@@ -77,6 +93,12 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating and Initializing a WordPress API Client">Creating and Initializing a WordPress API Client</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Authenticate">Authenticate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Publishing a post">Publishing a post</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Managing posts">Managing posts</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Helpers">Helpers</a></span></li>
 	
 </ul></li>
@@ -89,13 +111,29 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/apiWithXMLRPCEndpoint:token:">apiWithXMLRPCEndpoint:token:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/apiWithXMLRPCEndpoint:username:password:">apiWithXMLRPCEndpoint:username:password:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/authenticateWithClientId:redirectUri:secret:callback:">authenticateWithClientId:redirectUri:secret:callback:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/guessXMLRPCURLForSite:success:failure:">guessXMLRPCURLForSite:success:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/handleOpenURL:success:">handleOpenURL:success:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/ssoAvailable">ssoAvailable</a></span></li>
 	
 </ul></li>
 
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/authenticateWithSuccess:failure:">authenticateWithSuccess:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getPosts:success:failure:">getPosts:success:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithXMLRPCEndpoint:token:">initWithXMLRPCEndpoint:token:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithXMLRPCEndpoint:username:password:">initWithXMLRPCEndpoint:username:password:</a></span></li>
 	
@@ -162,12 +200,77 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/initWithXMLRPCEndpoint:username:password:">&ndash;&nbsp;initWithXMLRPCEndpoint:username:password:</a></code>
-		<span class="tooltip"><p>Initializes a <code>WordPressAPI</code> client trying to guess the proper XML-RPC endpoint from the site URL.</p></span>
+		<code><a href="#//api/name/apiWithXMLRPCEndpoint:username:password:">+&nbsp;apiWithXMLRPCEndpoint:username:password:</a></code>
+		<span class="tooltip"><p>Creates and initializes a <code>WordPressAPI</code> <a href="#//api/name/client">client</a> using <a href="#//api/name/password">password</a> authentication.</p></span>
 	</span>
 	
 	
 </li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/apiWithXMLRPCEndpoint:token:">+&nbsp;apiWithXMLRPCEndpoint:token:</a></code>
+		<span class="tooltip"><p>Creates and initializes a <code>WordPressAPI</code> <a href="#//api/name/client">client</a> using <a href="#//api/name/password">password</a> authentication.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithXMLRPCEndpoint:username:password:">&ndash;&nbsp;initWithXMLRPCEndpoint:username:password:</a></code>
+		<span class="tooltip"><p>Initializes a <code>WordPressAPI</code> <a href="#//api/name/client">client</a> using <a href="#//api/name/password">password</a> authentication.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithXMLRPCEndpoint:token:">&ndash;&nbsp;initWithXMLRPCEndpoint:token:</a></code>
+		<span class="tooltip"><p>Initializes a <code>WordPressAPI</code> <a href="#//api/name/client">client</a> using OAuth.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Authenticate" name="task_Authenticate"></a>
+						<h3 class="subsubtitle task-title">Authenticate</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/ssoAvailable">+&nbsp;ssoAvailable</a></code>
+		<span class="tooltip"><p>Checks if Single Sign-On using the WordPress app is available</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/authenticateWithClientId:redirectUri:secret:callback:">+&nbsp;authenticateWithClientId:redirectUri:secret:callback:</a></code>
+		<span class="tooltip"><p>Launches the WordPress app to authenticate with WordPress.com</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/handleOpenURL:success:">+&nbsp;handleOpenURL:success:</a></code>
+		<span class="tooltip"><p>Helper function for [UIApplicationDelegate application:handleOpenURL:] to process the authentication callback from the WordPress app</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/authenticateWithSuccess:failure:">&ndash;&nbsp;authenticateWithSuccess:failure:</a></code>
+		<span class="tooltip"><p>Performs a XML-RPC test call just to verify that the credentials are correct.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Publishing a post" name="task_Publishing a post"></a>
+						<h3 class="subsubtitle task-title">Publishing a post</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/publishPostWithText:title:success:failure:">&ndash;&nbsp;publishPostWithText:title:success:failure:</a></code>
 		<span class="tooltip"><p>Publishes a post asynchronously with text/HTML only</p></span>
@@ -192,6 +295,21 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/publishPostWithVideo:description:title:success:failure:">&ndash;&nbsp;publishPostWithVideo:description:title:success:failure:</a></code>
 		<span class="tooltip"><p>Publishes a post asynchronously with a video</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Managing posts" name="task_Managing posts"></a>
+						<h3 class="subsubtitle task-title">Managing posts</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getPosts:success:failure:">&ndash;&nbsp;getPosts:success:failure:</a></code>
+		<span class="tooltip"><p>Get a list of the recent posts</p></span>
 	</span>
 	
 	
@@ -224,6 +342,196 @@
 					<div class="section section-methods">
 						<a title="Class Methods" name="class_methods"></a>
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/apiWithXMLRPCEndpoint:token:" title="apiWithXMLRPCEndpoint:token:"></a>
+	<h3 class="subsubtitle method-title">apiWithXMLRPCEndpoint:token:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and initializes a <code>WordPressAPI</code> <a href="#//api/name/client">client</a> using <a href="#//api/name/password">password</a> authentication.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (WordPressApi *)apiWithXMLRPCEndpoint:(NSURL *)<em>xmlrpc</em> token:(NSString *)<em>token</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>xmlrpc</em></dt>
+			<dd><p>The XML-RPC endpoint URL, e.g.: <a href="https://en.blog.wordpress.com/xmlrpc.php">https://en.blog.wordpress.com/xmlrpc.php</a></p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>token</em></dt>
+			<dd><p>The OAuth <a href="#//api/name/token">token</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates and initializes a <code>WordPressAPI</code> <a href="#//api/name/client">client</a> using password authentication.</p>
+
+<p>Only supported for WordPress.com. See <a href="http://develop.wordpress.com/oauth2/">http://develop.wordpress.com/oauth2/</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WordPressApi.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/apiWithXMLRPCEndpoint:username:password:" title="apiWithXMLRPCEndpoint:username:password:"></a>
+	<h3 class="subsubtitle method-title">apiWithXMLRPCEndpoint:username:password:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and initializes a <code>WordPressAPI</code> <a href="#//api/name/client">client</a> using <a href="#//api/name/password">password</a> authentication.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (WordPressApi *)apiWithXMLRPCEndpoint:(NSURL *)<em>xmlrpc</em> username:(NSString *)<em>username</em> password:(NSString *)<em>password</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>xmlrpc</em></dt>
+			<dd><p>The XML-RPC endpoint URL, e.g.: <a href="https://en.blog.wordpress.com/xmlrpc.php">https://en.blog.wordpress.com/xmlrpc.php</a></p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>username</em></dt>
+			<dd><p>The user name</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>password</em></dt>
+			<dd><p>The <a href="#//api/name/password">password</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates and initializes a <code>WordPressAPI</code> <a href="#//api/name/client">client</a> using <a href="#//api/name/password">password</a> authentication.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WordPressApi.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/authenticateWithClientId:redirectUri:secret:callback:" title="authenticateWithClientId:redirectUri:secret:callback:"></a>
+	<h3 class="subsubtitle method-title">authenticateWithClientId:redirectUri:secret:callback:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Launches the WordPress app to authenticate with WordPress.com</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (void)authenticateWithClientId:(NSString *)<em>clientId</em> redirectUri:(NSString *)<em>redirectUri</em> secret:(NSString *)<em>secret</em> callback:(NSString *)<em>callback</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>clientId</em></dt>
+			<dd><p>Your Client ID</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>redirectUri</em></dt>
+			<dd><p>The redirect URL, it needs to match the one you provided on registration</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>secret</em></dt>
+			<dd><p>Your secret code</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>callback</em></dt>
+			<dd><p>A custom URL scheme that your app is registered to handle.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Launches the WordPress app to authenticate with WordPress.com</p>
+
+<p>If you don&rsquo;t have the necessary parameters, get them at <a href="http://develop.wordpress.com/contact/">http://develop.wordpress.com/contact/</a></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="http://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html#//apple_ref/doc/uid/TP40007072-CH7-SW50">Implementing Custom URL Schemes</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WordPressApi.h</code><br />
+	</div>				
+	
+	
+</div>
 						
 						<div class="section-method">
 	<a name="//api/name/guessXMLRPCURLForSite:success:failure:" title="guessXMLRPCURLForSite:success:failure:"></a>
@@ -295,6 +603,118 @@
 	
 </div>
 						
+						<div class="section-method">
+	<a name="//api/name/handleOpenURL:success:" title="handleOpenURL:success:"></a>
+	<h3 class="subsubtitle method-title">handleOpenURL:success:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Helper function for [UIApplicationDelegate application:handleOpenURL:] to process the authentication callback from the WordPress app</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (BOOL)handleOpenURL:(NSURL *)<em>url</em> success:(void ( ^ ) ( NSString *xmlrpc , NSString *token ))<em>success</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>url</em></dt>
+			<dd><p>The url passed to [UIApplicationDelegate application:handleOpenURL:]</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>A block called if the url could be processed. The block has no return value and takes two arguments: the XML-RPC endpoint for the blog and the OAuth <a href="#//api/name/token">token</a>. We highly recommend you store these in a secure place like the keychain.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the url passed was a valid callback from authentication and it could be processed. Otherwise it returns NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Helper function for [UIApplicationDelegate application:handleOpenURL:] to process the authentication callback from the WordPress app</p>
+
+<p>In your application delegate:</p>
+
+<pre><code> // Pre 4.2 support
+ - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+ return [facebook handleOpenURL:url]; 
+ }
+
+ // For 4.2+ support
+ - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+ sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+ return [facebook handleOpenURL:url]; 
+ }
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WordPressApi.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/ssoAvailable" title="ssoAvailable"></a>
+	<h3 class="subsubtitle method-title">ssoAvailable</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Checks if Single Sign-On using the WordPress app is available</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (BOOL)ssoAvailable</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Checks if Single Sign-On using the WordPress app is available</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WordPressApi.h</code><br />
+	</div>				
+	
+	
+</div>
+						
 					</div>
 					
 					
@@ -304,13 +724,182 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
+	<a name="//api/name/authenticateWithSuccess:failure:" title="authenticateWithSuccess:failure:"></a>
+	<h3 class="subsubtitle method-title">authenticateWithSuccess:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Performs a XML-RPC test call just to verify that the credentials are correct.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)authenticateWithSuccess:(void ( ^ ) ( BOOL valid ))<em>success</em> failure:(void ( ^ ) ( NSError *error ))<em>failure</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>A block object to execute when the credentials are valid. This block has no return value and one argument: if the credentials are valid or not.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>A block object to execute when the credentials can&rsquo;t be verified: it doesn&rsquo;t mean the credentials are invalid, just they can&rsquo;t be verified due to some network error. This block has no return value and takes one argument: a NSError object with details on the error.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Performs a XML-RPC test call just to verify that the credentials are correct.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WordPressApi.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getPosts:success:failure:" title="getPosts:success:failure:"></a>
+	<h3 class="subsubtitle method-title">getPosts:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get a list of the recent posts</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)getPosts:(NSUInteger)<em>count</em> success:(void ( ^ ) ( NSArray *posts ))<em>success</em> failure:(void ( ^ ) ( NSError *error ))<em>failure</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>count</em></dt>
+			<dd><p>Number of recent posts to get</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>A block object to execute when the method successfully publishes the post. This block has no return value and takes one argument: an array with the latest posts.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>A block object to execute when the method can&rsquo;t publish the post. This block has no return value and takes one argument: a NSError object with details on the error.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Get a list of the recent posts</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WordPressApi.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithXMLRPCEndpoint:token:" title="initWithXMLRPCEndpoint:token:"></a>
+	<h3 class="subsubtitle method-title">initWithXMLRPCEndpoint:token:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes a <code>WordPressAPI</code> <a href="#//api/name/client">client</a> using OAuth.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (id)initWithXMLRPCEndpoint:(NSURL *)<em>xmlrpc</em> token:(NSString *)<em>token</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>xmlrpc</em></dt>
+			<dd><p>The XML-RPC endpoint URL, e.g.: <a href="https://en.blog.wordpress.com/xmlrpc.php">https://en.blog.wordpress.com/xmlrpc.php</a></p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>token</em></dt>
+			<dd><p>The OAuth <a href="#//api/name/token">token</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initializes a <code>WordPressAPI</code> <a href="#//api/name/client">client</a> using OAuth.</p>
+
+<p>Only supported for WordPress.com. See <a href="http://develop.wordpress.com/oauth2/">http://develop.wordpress.com/oauth2/</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WordPressApi.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/initWithXMLRPCEndpoint:username:password:" title="initWithXMLRPCEndpoint:username:password:"></a>
 	<h3 class="subsubtitle method-title">initWithXMLRPCEndpoint:username:password:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Initializes a <code>WordPressAPI</code> client trying to guess the proper XML-RPC endpoint from the site URL.</p>
+		<p>Initializes a <code>WordPressAPI</code> <a href="#//api/name/client">client</a> using <a href="#//api/name/password">password</a> authentication.</p>
 	</div>		
 	
 	
@@ -332,7 +921,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>password</em></dt>
-			<dd><p>The password</p></dd>
+			<dd><p>The <a href="#//api/name/password">password</a></p></dd>
 		</dl>
 		
 	</div>
@@ -345,7 +934,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Initializes a <code>WordPressAPI</code> client trying to guess the proper XML-RPC endpoint from the site URL.</p>
+		<p>Initializes a <code>WordPressAPI</code> <a href="#//api/name/client">client</a> using <a href="#//api/name/password">password</a> authentication.</p>
 	</div>
 	
 	
@@ -658,7 +1247,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2011 Automattic. All rights reserved. (Last updated: 2011-12-16)</span><br />
+						<p><span class="copyright">&copy; 2012 Automattic. All rights reserved. (Last updated: 2012-01-17)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 743)</a>.</span></p>
 						
